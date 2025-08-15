@@ -12,7 +12,7 @@ export function About() {
                         <h2 className="text-4xl font-bold">About PixelClutch</h2>
 
                         <p>
-                            Esports is not just about playing - it's about community, competition, and epic moments. Our platform connects passionate players, providing tools for you to shine in the competitive scene.
+                            Esports is not just about playing - it&apos;s about community, competition, and epic moments. Our platform connects passionate players, providing tools for you to shine in the competitive scene.
                         </p>
 
                         <ul className="space-y-4">

@@ -1,6 +1,6 @@
 'use client'
 
-import { GameController, Warning, ArrowUUpLeft, Trophy } from '@phosphor-icons/react'
+import { Warning, ArrowUUpLeft, Trophy } from '@phosphor-icons/react'
 import Link from 'next/link'
 
 export default function NotFound() {

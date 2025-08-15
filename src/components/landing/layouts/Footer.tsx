@@ -1,4 +1,4 @@
-import { InstagramLogo, DiscordLogo, Envelope, MapPin, Phone, XLogoIcon } from '@phosphor-icons/react/dist/ssr'
+import { InstagramLogo, DiscordLogo, Envelope, Phone, XLogoIcon } from '@phosphor-icons/react/dist/ssr'
 import { TbBrandKick } from 'react-icons/tb'
 
 export function Footer() {

@@ -2,7 +2,7 @@
 
 import { DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
-import { Check, Menu, User, X } from "lucide-react";
+import { Menu, User, X } from "lucide-react";
 import React from "react";
 import Sidebar from "./sidebar";
 import { signOut } from "next-auth/react";
