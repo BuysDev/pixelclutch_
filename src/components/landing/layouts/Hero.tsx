@@ -1,7 +1,7 @@
 'use client'
 
 import { TwitchLogo, GameController } from '@phosphor-icons/react/dist/ssr'
-import esportsHero from '../../../public/gaminghero.png'
+import esportsHero from '../../../../public/gaminghero.png'
 import Image from 'next/image'
 
 export default function Hero() {
