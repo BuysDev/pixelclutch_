@@ -41,8 +41,8 @@ export default function RegisterPage() {
         resolver: zodResolver(schema)
     })
 
-    const onSubmit = (data: any) => {
-        console.log(data) // Replace with registration logic
+    const onSubmit = (data: Object) => {
+        console.log(data)
     }
 
     return (
