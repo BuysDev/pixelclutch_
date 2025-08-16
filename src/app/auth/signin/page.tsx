@@ -17,7 +17,7 @@ export default function LoginPage() {
         resolver: zodResolver(schema)
     })
 
-    const onSubmit = (data: Object) => {
+    const onSubmit = (data: object) => {
         console.log(data)
     }
 
