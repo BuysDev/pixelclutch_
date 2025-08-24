@@ -79,7 +79,7 @@ export default function LoginPage() {
                             Forgot password?
                         </a>
                         <p className="mt-3 text-xs text-gray-400">
-                            New player? <a href="/register" className="hover:text-electric-pink hover:underline">Create account</a>
+                            New player? <a href="/auth/signup" className="hover:text-electric-pink hover:underline">Create account</a>
                         </p>
                     </div>
                 </div>

@@ -154,7 +154,7 @@ export default function RegisterPage() {
 
                     <div className="mt-5 pt-5 border-t border-gray-800 text-center">
                         <p className="text-xs text-gray-400">
-                            Already registered? <Link href="/login" className="text-neon-blue hover:underline hover:text-electric-pink">Sign in</Link>
+                            Already registered? <Link href="/auth/signin" className="text-neon-blue hover:underline hover:text-electric-pink">Sign in</Link>
                         </p>
                     </div>
                 </div>

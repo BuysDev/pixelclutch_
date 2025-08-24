@@ -9,11 +9,11 @@ export function Footer() {
                 <footer className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 mt-5'>
                     <div>
                         <h3 className='text-2xl font-semibold mb-2'>PixelClutch</h3>
-                        <p className='mb-4'>A plataforma definitiva para jogadores competitivos. Conecte, compita e evolua.</p>
+                        <p className='mb-4'>The definitive platform for competitive players. Connect, compete and evolve.</p>
                     </div>
 
                     <div>
-                        <h3 className='text-2xl font-semibold mb-2'>Links Rápidos</h3>
+                        <h3 className='text-2xl font-semibold mb-2'>Rapid Links</h3>
                         <ul className='space-y-2'>
                             <li><a href="#tournaments" className='hover:text-neon-blue transition'>Tournaments</a></li>
                             <li><a href="#teams" className='hover:text-neon-blue transition'>Find Teams</a></li>
@@ -23,7 +23,7 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h3 className='text-2xl font-semibold mb-2'>Contatos</h3>
+                        <h3 className='text-2xl font-semibold mb-2'>Contacts</h3>
                         <div className='space-y-3'>
                             <p className='flex items-center gap-2'>
                                 <Envelope className='w-5 h-5 text-neon-blue' />
@@ -37,7 +37,7 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h3 className='text-2xl font-semibold mb-2'>Junte-se à Comunidade</h3>
+                        <h3 className='text-2xl font-semibold mb-2'>Join our community</h3>
                         <div className='flex gap-4'>
                             <a
                                 href="#"
@@ -74,7 +74,7 @@ export function Footer() {
                         </div>
 
                         <div className='mt-6'>
-                            <h4 className='font-medium mb-2'>Baixe nosso app</h4>
+                            <h4 className='font-medium mb-2'>Download app</h4>
                             <div className='flex gap-3'>
                                 <a href="#" className='bg-gray-800 hover:bg-gray-700 px-3 py-2 rounded text-sm flex items-center gap-1'>
                                     <span>Google Play</span>
@@ -88,7 +88,7 @@ export function Footer() {
                 </footer>
 
                 <div className='border-t border-gray-700 pt-6 text-center text-gray-400'>
-                    <p>© 2023 PIXELCLUTCH. Todos os direitos reservados. | <a href="#" className='hover:text-white'>Termos de Uso</a> | <a href="#" className='hover:text-white'>Política de Privacidade</a></p>
+                    <p>© 2023 PIXELCLUTCH. All rights reserved. | <a href="#" className='hover:text-white'>Terms</a> | <a href="#" className='hover:text-white'>Privacy Policy</a></p>
                 </div>
 
             </div>

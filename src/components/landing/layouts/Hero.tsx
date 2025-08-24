@@ -36,7 +36,7 @@ export default function Hero() {
                             data-aos="fade-up"
                             data-aos-delay="500"
                             target='_blank'
-                            href={`/`}
+                            href={`/auth/signup`}
                             className="bg-electric-pink/70 font-bold px-5 py-2 rounded-md font-semibold flex items-center justify-center w-fit gap-2"
                         >
                             <GameController className="w-5 h-5" />

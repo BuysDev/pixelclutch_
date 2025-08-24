@@ -16,7 +16,7 @@ const services = [
     },
     {
         title: "Premium Tournaments",
-        description: "Competições com premiação em cash e patrocínios. Transmissão ao vivo na plataforma.",
+        description: "Competitions with cash prizes and sponsorships. Live streaming on the platform.",
         duration: "2-4h",
         price: "$20-50",
         icon: <Trophy className="text-electric-pink" />,
@@ -146,16 +146,6 @@ export default function Services() {
                     >
                         <ChevronRight className='w-6 h-6 text-white' />
                     </button>
-                </div>
-
-                <div className="text-center mt-12">
-                    <a
-                        href="#all-services"
-                        className="inline-flex items-center gap-2 border border-neon-blue text-neon-blue hover:bg-neon-blue/10 px-6 py-3 rounded-lg transition-colors"
-                    >
-                        Ver todos os serviços
-                        <ChevronRight className="w-4 h-4" />
-                    </a>
                 </div>
             </div>
         </section>
