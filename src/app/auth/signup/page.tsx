@@ -48,7 +48,6 @@ export default function RegisterPage() {
     return (
         <div className="min-h-screen bg-cyber-black flex items-center justify-center p-4">
             <div className="w-full max-w-xs">
-                {/* Logo/Title */}
                 <div className="text-center mb-8">
                     <GameController className="mx-auto w-8 h-8" />
                     <h1 className="mt-3 text-2xl font-light tracking-widest text-gray-100">PIXELCLUTCH</h1>

@@ -1,0 +1,129 @@
+'use client'
+
+import * as React from "react"
+import useEmblaCarousel from 'embla-carousel-react'
+import { ChevronLeft, ChevronRight, PlusCircleIcon, Trophy } from 'lucide-react'
+import { TbBrandKickFilled } from "react-icons/tb"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+
+interface Member {
+    id: number
+    name: string
+    role: string
+    isOnline: boolean
+    game?: string
+}
+
+const members: Member[] = [
+    {
+        id: 1,
+        name: "Mago GZR",
+        role: "Jungler",
+        isOnline: true,
+        game: "League of Legends"
+    },
+    {
+        id: 2,
+        name: "Cleiton",
+        role: "Top Laner",
+        isOnline: true,
+        game: "Valorant"
+    },
+    {
+        id: 3,
+        name: "Tutsz",
+        role: "Mid Laner",
+        isOnline: false,
+        game: "CS:GO"
+    },
+    {
+        id: 4,
+        name: "Cleber",
+        role: "AD Carry",
+        isOnline: false,
+        game: "Dota 2"
+    },
+    {
+        id: 5,
+        name: "Ninja",
+        role: "Support",
+        isOnline: true,
+        game: "Fortnite"
+    }
+]
+
+export default function TeamPlayersStatusCarousel() {
+    const [emblaRef, emblaApi] = useEmblaCarousel({
+        loop: false,
+        align: "start",
+        slidesToScroll: 1,
+        breakpoints: {
+            "(min-width: 768px)": { slidesToScroll: 3 }
+        }
+    })
+
+    const scrollPrev = () => emblaApi?.scrollPrev()
+    const scrollNext = () => emblaApi?.scrollNext()
+
+    return (
+        <div className="w-[85%] mt-5">
+            <div className="relative">
+                <div className='overflow-hidden' ref={emblaRef}>
+                    <div className='flex'>
+                        {members.map((member) => (
+                            <div key={member.id} className="flex-[0_0_100%] cursor-normal min-w-0 md:flex-[0_0_calc(100%/2.5)] lg:flex-[0_0_calc(100%/3)] px-3">
+                                <article className="bg-gray-800 transition-all duration-300 rounded-xl p-6 space-y-4 h-full flex flex-col border border-gray-700 hover:border-neon-blue">
+                                    <div className='flex-1'>
+                                        <div className='flex gap-4 items-start'>
+                                            <Avatar className="bg-electric-pink/10 rounded-full items-center flex justify-center p-8">
+                                                <AvatarFallback className="text-xl font-bold">
+                                                    G
+                                                </AvatarFallback>
+                                            </Avatar>
+                                            <div>
+                                                <h3 className='font-bold text-xl mb-2 text-white'>{member.name}</h3>
+                                                <p className='text-gray-400 text-sm'>
+                                                    {member.role} {member.isOnline ? "(Online)" : "(Offline)"}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className='border-t border-gray-700 pt-4 flex items-center justify-between'>
+                                        <div className='flex items-center gap-3'>
+                                            <span className='text-xs bg-gray-900 px-2 py-1 rounded'>{member.game}</span>
+                                        </div>
+
+                                        <a
+                                            href="#"
+                                            className="flex items-center justify-center gap-2 px-3 py-1 rounded-md text-sm bg-blue-400 cursor-pointer text-black font-bold hover:bg-blue-800"
+                                        >
+                                            <PlusCircleIcon className='w-4 h-4' />
+                                            <span className="hidden sm:inline">Invite</span>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <button
+                    className='bg-gray-800 hover:bg-neon-blue transition-all flex items-center justify-center rounded-full w-10 h-10 absolute left-0 -translate-y-1/2 top-1/2 z-1 border border-gray-700 shadow-lg cursor-pointer'
+                    onClick={scrollPrev}
+                    aria-label="Previous tournament"
+                >
+                    <ChevronLeft className='w-6 h-6 text-white' />
+                </button>
+
+                <button
+                    className='bg-gray-800 hover:bg-neon-blue transition-all flex items-center justify-center rounded-full w-10 h-10 absolute right-0 -translate-y-1/2 top-1/2 z-1 border border-gray-700 shadow-lg cursor-pointer'
+                    onClick={scrollNext}
+                    aria-label="Next tournament"
+                >
+                    <ChevronRight className='w-6 h-6 text-white' />
+                </button>
+            </div>
+        </div>
+    )
+}
