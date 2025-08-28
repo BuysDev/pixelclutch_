@@ -3,7 +3,6 @@
 import Header from "@/components/hub/navigation/header"
 import { Avatar } from "@/components/ui/avatar"
 import { AvatarFallback } from "@radix-ui/react-avatar"
-import { getServerSession } from 'next-auth/next'
 import { LiveInRegion } from '@/components/hub/layouts/liveInRegion'
 // import { useRouter } from "next/navigation"
 import TeamPlayersStatus from "@/components/hub/layouts/teamPlayersStatus"
