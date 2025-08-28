@@ -46,7 +46,7 @@ export function About() {
 
                             <a
                                 href="#tournaments"
-                                className="bg-neon-blue flex items-center justify-center w-fit gap-2 px-4 py-2 rounded-md"
+                                className="bg-cobalt-blue font-bold flex items-center justify-center w-fit gap-2 px-4 py-2 rounded-md"
                             >
                                 <Trophy className="w-5 h-5 text-white" />
                                 Active Tournaments
