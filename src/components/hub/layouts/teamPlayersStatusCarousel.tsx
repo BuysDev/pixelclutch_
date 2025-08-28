@@ -2,8 +2,7 @@
 
 import * as React from "react"
 import useEmblaCarousel from 'embla-carousel-react'
-import { ChevronLeft, ChevronRight, PlusCircleIcon, Trophy } from 'lucide-react'
-import { TbBrandKickFilled } from "react-icons/tb"
+import { ChevronLeft, ChevronRight, PlusCircleIcon } from 'lucide-react'
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 interface Member {

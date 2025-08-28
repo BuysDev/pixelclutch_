@@ -9,8 +9,6 @@ import { LiveInRegion } from '@/components/hub/layouts/liveInRegion'
 import TeamPlayersStatus from "@/components/hub/layouts/teamPlayersStatus"
 
 export default async function Hub() {
-    const session = await getServerSession()
-
     return (
         <div className="min-h-screen">
             <Header />
