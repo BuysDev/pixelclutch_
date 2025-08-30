@@ -53,7 +53,7 @@ export function LiveInRegion() {
                     <div className='flex'>
                         {live.map((tournament) => (
                             <div key={tournament.id} className="flex-[0_0_100%] cursor-normal min-w-0 md:flex-[0_0_calc(100%/2.5)] lg:flex-[0_0_calc(100%/3)] px-3">
-                                <article className="bg-gray-800 hover:bg-gray-700 transition-all duration-300 rounded-xl p-6 space-y-4 h-full flex flex-col border border-gray-700 hover:border-neon-blue">
+                                <article className="bg-gray-800 transition-all duration-300 rounded-xl p-6 space-y-4 h-full flex flex-col border border-gray-700 hover:border-electric-pink">
                                     <div className='flex-1'>
                                         <div className='flex gap-4 items-start'>
                                             <div className="p-3 bg-gray-900 rounded-lg">
