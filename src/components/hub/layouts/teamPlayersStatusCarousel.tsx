@@ -2,56 +2,35 @@
 
 import * as React from "react"
 import useEmblaCarousel from 'embla-carousel-react'
-import { ChevronLeft, ChevronRight, PlusCircleIcon } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Trophy, PlusCircle } from 'lucide-react'
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 interface Member {
     id: number
     name: string
-    role: string
-    isOnline: boolean
-    game?: string
+    game: string
+    initialLetter: string
+    online: boolean
 }
 
 const members: Member[] = [
     {
         id: 1,
         name: "Mago GZR",
-        role: "Jungler",
-        isOnline: true,
-        game: "League of Legends"
+        game: "CS2",
+        initialLetter: "MG",
+        online: true
     },
     {
         id: 2,
-        name: "Cleiton",
-        role: "Top Laner",
-        isOnline: true,
-        game: "Valorant"
-    },
-    {
-        id: 3,
-        name: "Tutsz",
-        role: "Mid Laner",
-        isOnline: false,
-        game: "CS:GO"
-    },
-    {
-        id: 4,
-        name: "Cleber",
-        role: "AD Carry",
-        isOnline: false,
-        game: "Dota 2"
-    },
-    {
-        id: 5,
-        name: "Ninja",
-        role: "Support",
-        isOnline: true,
-        game: "Fortnite"
+        name: "Guguis",
+        game: "Rainbow Six Siege",
+        initialLetter: "G",
+        online: false
     }
 ]
 
-export default function TeamPlayersStatusCarousel() {
+export function TeamPlayersStatusCarousel() {
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: false,
         align: "start",
@@ -65,25 +44,22 @@ export default function TeamPlayersStatusCarousel() {
     const scrollNext = () => emblaApi?.scrollNext()
 
     return (
-        <div className="w-[85%] mt-5">
+        <div className="w-[85%] mt-5 space-y-4">
             <div className="relative">
                 <div className='overflow-hidden' ref={emblaRef}>
                     <div className='flex'>
                         {members.map((member) => (
                             <div key={member.id} className="flex-[0_0_100%] cursor-normal min-w-0 md:flex-[0_0_calc(100%/2.5)] lg:flex-[0_0_calc(100%/3)] px-3">
-                                <article className="bg-gray-800 transition-all duration-300 rounded-xl p-6 space-y-4 h-full flex flex-col border border-gray-700 hover:border-neon-blue">
+                                <article className="bg-gray-800 transition-all duration-300 rounded-xl p-6 space-y-4 h-full flex flex-col border border-gray-700 hover:border-cobalt-blue">
                                     <div className='flex-1'>
-                                        <div className='flex gap-4 items-start'>
-                                            <Avatar className="bg-electric-pink/10 rounded-full items-center flex justify-center p-8">
-                                                <AvatarFallback className="text-xl font-bold">
-                                                    G
-                                                </AvatarFallback>
-                                            </Avatar>
+                                        <div className='flex gap-4 items-center'>
+                                            <div className="p-3 bg-electric-pink/10 rounded-full">
+                                                <Avatar>
+                                                    <AvatarFallback className="text-xl font-bold">{member.initialLetter}</AvatarFallback>
+                                                </Avatar>
+                                            </div>
                                             <div>
-                                                <h3 className='font-bold text-xl mb-2 text-white'>{member.name}</h3>
-                                                <p className='text-gray-400 text-sm'>
-                                                    {member.role} {member.isOnline ? "(Online)" : "(Offline)"}
-                                                </p>
+                                                <h3 className='font-bold text-xl mb-2 text-white'>{member.name} {member.online === true ? "(Online)" : "(Offline)"}</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +73,7 @@ export default function TeamPlayersStatusCarousel() {
                                             href="#"
                                             className="flex items-center justify-center gap-2 px-3 py-1 rounded-md text-sm bg-blue-400 cursor-pointer text-black font-bold hover:bg-blue-800"
                                         >
-                                            <PlusCircleIcon className='w-4 h-4' />
+                                            <PlusCircle className='w-4 h-4' />
                                             <span className="hidden sm:inline">Invite</span>
                                         </a>
                                     </div>

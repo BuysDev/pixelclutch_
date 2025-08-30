@@ -5,7 +5,7 @@ import { Avatar } from "@/components/ui/avatar"
 import { AvatarFallback } from "@radix-ui/react-avatar"
 import { LiveInRegion } from '@/components/hub/layouts/liveInRegion'
 // import { useRouter } from "next/navigation"
-import TeamPlayersStatus from "@/components/hub/layouts/teamPlayersStatus"
+import { TeamPlayersStatus } from '@/components/hub/layouts/teamPlayersStatus'
 
 export default async function Hub() {
     return (

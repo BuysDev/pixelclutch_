@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import TeamPlayersStatusCarousel from './teamPlayersStatusCarousel'
+import { TeamPlayersStatusCarousel } from './teamPlayersStatusCarousel'
 
-export default function TeamPlayersStatus() {
+export function TeamPlayersStatus() {
     return (
         <div className="bg-gray-900">
             <div className="flex items-center mt-4 gap-4 p-6">

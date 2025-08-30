@@ -15,7 +15,7 @@ export default function Header() {
     }
     return (
         <>
-            <header className="h-20 flex sticky bg-cyber-black z-1 top-0 items-center justify-between px-4 border-b border-gray-800">
+            <header className="h-20 flex sticky bg-cyber-black z-12 top-0 items-center justify-between px-4 border-b border-gray-800">
                 <div className="flex items-center space-x-4">
                     <h1 className="text-3xl font-bold">Pixel<span className="text-electric-pink">Clutch</span></h1>
                 </div>
