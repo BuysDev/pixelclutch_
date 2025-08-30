@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import useEmblaCarousel from 'embla-carousel-react'
-import { ChevronLeft, ChevronRight, Trophy, PlusCircle } from 'lucide-react'
+import { ChevronLeft, ChevronRight, PlusCircle } from 'lucide-react'
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 interface Member {
