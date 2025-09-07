@@ -44,7 +44,7 @@ export function TeamPlayersStatusCarousel() {
     const scrollNext = () => emblaApi?.scrollNext()
 
     return (
-        <div className="w-[85%] mt-5 space-y-4">
+        <div className="w-[85%] space-y-4">
             <div className="relative">
                 <div className='overflow-hidden' ref={emblaRef}>
                     <div className='flex'>

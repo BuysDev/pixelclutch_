@@ -6,13 +6,15 @@ import { Menu, User, X } from "lucide-react";
 import React from "react";
 import Sidebar from "./sidebar";
 import { signOut } from "next-auth/react";
-// import { Notification } from "@/components/notification";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
     const [open, setOpen] = React.useState(false);
     const handleMenuClick = () => {
         setOpen(!open);
     }
+
+    const router = useRouter()
     return (
         <>
             <header className="h-20 flex sticky bg-cyber-black z-12 top-0 items-center justify-between px-4 border-b border-gray-800">
@@ -32,14 +34,14 @@ export default function Header() {
                         <DropdownMenuTrigger className="p-2 rounded-full cursor-pointer hover:text-electric-pink">
                             <User className="h-6 w-6" />
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent className="w-48">
-                            <DropdownMenuItem className="cursor-pointer">
+                        <DropdownMenuContent className="w-48 bg-cyber-black">
+                            <DropdownMenuItem onClick={() => router.push('/hub/profile')} className="cursor-pointer">
                                 Perfil
                             </DropdownMenuItem>
-                            <DropdownMenuItem className="cursor-pointer">
+                            <DropdownMenuItem onClick={() => router.push('/hub/settings')} className="cursor-pointer">
                                 Configurações
                             </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => signOut} className="cursor-pointer">
+                            <DropdownMenuItem onClick={() => signOut} className="cursor-pointer text-red-500">
                                 Sign Out
                             </DropdownMenuItem>
                         </DropdownMenuContent>

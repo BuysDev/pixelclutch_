@@ -1,4 +1,4 @@
-import { PlaySquareIcon, PlusCircleIcon, SearchIcon } from "lucide-react";
+import { ArrowLeftRight, PlaySquareIcon, PlusCircleIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
 
 interface SidebarProps {
@@ -20,6 +20,10 @@ export default function Sidebar({ open }: SidebarProps) {
                 <Link href="/hub/drops" className="block px-4 py-2 hover:bg-gray-700 rounded items-center">
                     <PlaySquareIcon className="inline-block mr-2" />
                     {open ? "Drops" : ""}
+                </Link>
+                <Link href="/hub/team_randomizer" className="block px-4 py-2 hover:bg-gray-700 rounded items-center">
+                    <ArrowLeftRight className="inline-block mr-2" />
+                    {open ? "Team Randomizer" : ""}
                 </Link>
             </nav>
         </aside>
