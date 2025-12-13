@@ -35,7 +35,7 @@ export default function Header() {
                             <User className="h-6 w-6" />
                         </DropdownMenuTrigger>
                         <DropdownMenuContent className="w-48 bg-cyber-black">
-                            <DropdownMenuItem onClick={() => router.push('/hub/profile')} className="cursor-pointer">
+                            <DropdownMenuItem onClick={() => router.push('/hub/gzrmago_')} className="cursor-pointer">
                                 Perfil
                             </DropdownMenuItem>
                             <DropdownMenuItem onClick={() => router.push('/hub/settings')} className="cursor-pointer">

@@ -17,7 +17,6 @@ const ChatWindow: React.FC = () => {
         const newMessage: Message = { id: Date.now(), text: input, sender: 'user' };
         setMessages(prev => [...prev, newMessage]);
         setInput('');
-        // Simulate bot response
         setTimeout(() => {
             const botMessage: Message = { id: Date.now() + 1, text: 'This is a bot response.', sender: 'bot' };
             setMessages(prev => [...prev, botMessage]);
@@ -29,7 +28,7 @@ const ChatWindow: React.FC = () => {
     }, [messages]);
 
     return (
-        <div className="flex flex-col h-full bg-zinc-900/80 border border-gray-700 rounded-lg shadow-lg">
+        <div className="flex flex-col h-[80%] bg-zinc-900/80 border border-gray-700 rounded-lg shadow-lg">
             <div className="flex-1 p-4 overflow-y-auto">
                 {messages.map(msg => (
                     <div key={msg.id} className={`mb-2 ${msg.sender === 'user' ? 'text-right' : 'text-left'}`}>

@@ -1,4 +1,3 @@
-//create a real time sidebar like web instagram
 import React from 'react';
 
 const chats = [
@@ -9,8 +8,8 @@ const chats = [
 
 const ChatSidebar: React.FC = () => {
     return (
-        <div className="h-full bg-zinc-900/80 border border-gray-700 rounded-lg shadow-lg overflow-y-auto">
-            <div className="p-4 border-b border-gray-700">
+        <div className="w-full h-full bg-zinc-900/80 border-r border-gray-700 overflow-y-auto">
+            <div className="p-4">
                 <h2 className="text-xl font-bold text-white">Chats</h2>
             </div>
             <ul>
