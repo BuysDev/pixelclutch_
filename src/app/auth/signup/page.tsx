@@ -1,11 +1,13 @@
 "use client"
 
 import { GameController, Eye, EyeSlash, User } from '@phosphor-icons/react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import Link from 'next/link'
+import { signIn, signUp, useSession } from '@/lib/auth-client'
+import { redirect, useRouter } from 'next/navigation'
 
 const schema = z.object({
     username: z.string()
@@ -17,7 +19,6 @@ const schema = z.object({
         .min(8, "8+ characters")
         .regex(/[A-Z]/, "1 uppercase letter")
         .regex(/[0-9]/, "1 number"),
-    game: z.string().min(1, "Select a game"),
     confirmPassword: z.string()
         .min(8, "8+ characters")
         .regex(/[A-Z]/, "1 uppercase letter")
@@ -27,13 +28,6 @@ const schema = z.object({
     path: ["confirmPassword"]
 })
 
-const games = [
-    { id: 'valorant', name: 'Valorant' },
-    { id: 'lol', name: 'League of Legends' },
-    { id: 'cs2', name: 'CS2' },
-    { id: 'other', name: 'Other' }
-]
-
 export default function RegisterPage() {
     const [showPass, setShowPass] = useState(false)
     const [showConfirmPass, setShowConfirmPass] = useState(false)
@@ -41,8 +35,37 @@ export default function RegisterPage() {
         resolver: zodResolver(schema)
     })
 
-    const onSubmit = (data: object) => {
-        console.log(data)
+    const session = useSession()
+    const router = useRouter()
+
+    React.useEffect(() => {
+        if (session) {
+            router.push('/hub')
+        }
+    }, [session.data, router])
+    
+    if (session.data) {
+        return null
+    }
+
+    const onSubmit = async (data: z.infer<typeof schema>) => {
+        try {
+            signUp.email({
+                email: data.email,
+                name: data.username,
+                password: data.password
+            })
+
+            signIn.email({
+                email: data.email,
+                password: data.password
+            })
+
+            return redirect("/hub")
+            
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     return (
@@ -85,22 +108,6 @@ export default function RegisterPage() {
                             {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email.message}</p>}
                         </div>
 
-                        {/* Main Game */}
-                        <div>
-                            <label className="block text-xs text-gray-400 mb-1">MAIN GAME</label>
-                            <select
-                                {...register('game')}
-                                className="w-full bg-gray-900/50 border border-gray-800 rounded px-4 py-2.5 text-sm text-gray-100 focus:outline-none focus:ring-1 focus:ring-neon-blue/50 appearance-none"
-                            >
-                                <option value="">Select game</option>
-                                {games.map(game => (
-                                    <option key={game.id} value={game.id}>{game.name}</option>
-                                ))}
-                            </select>
-                            {errors.game && <p className="mt-1 text-xs text-red-400">{errors.game.message}</p>}
-                        </div>
-
-                        {/* Password */}
                         <div>
                             <label className="block text-xs text-gray-400 mb-1">PASSWORD</label>
                             <div className="relative">

@@ -1,13 +1,28 @@
-'use server'
+'use client'
 
 import Header from "@/components/hub/navigation/header"
 import { Avatar } from "@/components/ui/avatar"
 import { AvatarFallback } from "@radix-ui/react-avatar"
 import { LiveInRegion } from '@/components/hub/layouts/liveInRegion'
-// import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { TeamPlayersStatus } from '@/components/hub/layouts/teamPlayersStatus'
+import { useSession } from "@/lib/auth-client"
+import React from "react"
 
-export default async function Hub() {
+export default function Hub() {
+    const session = useSession()
+    const router = useRouter()
+
+    React.useEffect(() => {
+        if (!session) {
+            router.push('/auth/signin')
+        }
+    }, [session.data, router])
+
+    if (!session.data) {
+        return null
+    }
+
     return (
         <div className="min-h-screen">
             <Header />
@@ -23,7 +38,7 @@ export default async function Hub() {
                                 </Avatar>
                                 <section>
                                     <h1 className="text-2xl font-bold text-white">
-                                        Mago GZR
+                                        {session.data?.user.name}
                                     </h1>
                                     <p>G4RR4</p>
                                 </section>
